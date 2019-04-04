@@ -36,10 +36,12 @@ export class MainScreen extends React.Component {
   }
 
   componentDidMount() {
-    const { getTodos, createTodo } = this.props;
+    const { getTodos, createTodo, deleteTodo, updateTodo } = this.props;
 
     getTodos();
     createTodo();
+    deleteTodo();
+    updateTodo();
   }
 
   render() {
