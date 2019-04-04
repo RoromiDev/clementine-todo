@@ -4,13 +4,9 @@ import {
   Text,
   View,
   TouchableOpacity,
-  Image,
   Dimensions
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-import { Constants } from "expo";
 import { connect } from "react-redux";
-import { NavigationActions } from "react-navigation";
 import * as actions from "../actions";
 
 const { width } = Dimensions.get("window");

@@ -9,10 +9,9 @@ import {
   TextInput,
   TouchableOpacity
 } from "react-native";
-import { Constants, ImagePicker, Permissions, Camera } from "expo";
+import { Constants, Permissions, Camera } from "expo";
 import { Ionicons } from "@expo/vector-icons";
 import { connect } from "react-redux";
-import { NavigationActions } from "react-navigation";
 import * as actions from "../actions";
 import { Header, Loader } from "../components";
 

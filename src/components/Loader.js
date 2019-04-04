@@ -4,14 +4,9 @@ import {
   Text,
   View,
   ActivityIndicator,
-  Image,
   Dimensions
 } from "react-native";
-import CheckBox from "react-native-check-box";
-import { Ionicons } from "@expo/vector-icons";
-import { Constants } from "expo";
 import { connect } from "react-redux";
-import { NavigationActions } from "react-navigation";
 import * as actions from "../actions";
 
 const { height, width } = Dimensions.get("window");
