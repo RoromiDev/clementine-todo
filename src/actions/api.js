@@ -20,14 +20,9 @@ export const getTodos = () => dispatch => {
     });
 };
 
-export const createTodo = (
-  title = "coucou",
-  body = "coucou",
-  userId = 42
-) => dispatch => {
+export const createTodo = (title, userId = 42) => dispatch => {
   const parameters = {
     title,
-    body,
     userId
   };
 
@@ -42,22 +37,19 @@ export const createTodo = (
     });
 };
 
-export const deleteTodo = (id = 2) => dispatch => {
+export const deleteTodo = (id) => dispatch => {
   dispatch({ type: DELETE_TODO });
   client
     .delete(`/todos/${id}`)
     .then(response => {
-      dispatch({ type: resultOf(DELETE_TODO), data: response.data });
+      dispatch({ type: resultOf(DELETE_TODO), data: id });
     })
     .catch(error => {
       dispatch({ type: errorOf(DELETE_TODO), data: error });
     });
 };
 
-export const updateTodo = (
-  newParameters = { title: "coucoucoucoc" },
-  id = 2
-) => dispatch => {
+export const updateTodo = (newParameters, id) => dispatch => {
   dispatch({ type: UPDATE_TODO });
   client
     .put(`/todos/${id}`, { ...newParameters })

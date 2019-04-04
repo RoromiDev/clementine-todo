@@ -1,8 +1,15 @@
-import { GET_TODOS, CREATE_TODO, resultOf, errorOf } from "../constants";
+import {
+  GET_TODOS,
+  CREATE_TODO,
+  UPDATE_TODO,
+  resultOf,
+  errorOf
+} from "../constants";
 
 const initialState = {
   getTodos: false,
-  createTodo: false
+  createTodo: false,
+  updateTodo: false
 };
 
 const loading = (state = initialState, action) => {
@@ -31,6 +38,19 @@ const loading = (state = initialState, action) => {
       return {
         ...state,
         createTodo: false
+      };
+    }
+    case UPDATE_TODO: {
+      return {
+        ...state,
+        updateTodo: true
+      };
+    }
+    case resultOf(UPDATE_TODO):
+    case errorOf(UPDATE_TODO): {
+      return {
+        ...state,
+        updateTodo: false
       };
     }
     default:
